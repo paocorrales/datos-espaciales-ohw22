@@ -20,7 +20,6 @@ options(htmltools.dir.version = FALSE)
 library(here)
 library(ggplot2)
 library(dplyr)
-library(data.table)
 library(metR)
 ```
 class: center
@@ -76,7 +75,7 @@ mapa <- rnaturalearth::ne_countries(country = c("argentina", "chile", "uruguay",
 sf::sf_use_s2(FALSE)
 
 temperature %>% 
-  .[lev == 1000 & lon %between% c(275, 315) & lat %between% c(-60, -10)] %>% 
+  .[lev == 1000 & between(lon, 275, 315) & between(lat, -60, -10)] %>% 
   ggplot(aes(ConvertLongitude(lon), lat)) +
   geom_point(aes(color = air-273.15)) +
   scale_color_viridis_c(guide = guide_colorbar(barheight = 15,
@@ -101,11 +100,11 @@ temperature %>%
 ### Grillas irregulares
 
 ```{r echo=FALSE, fig.height=6}
-observaciones <- fread("https://raw.githubusercontent.com/eliocamp/r-clima/master/datos/observaciones_smn.csv") %>% 
+observaciones <- readr::read_csv("https://raw.githubusercontent.com/eliocamp/r-clima/master/datos/observaciones_smn.csv") %>% 
   group_by(station) %>% 
   summarise(tmax_media = mean(tmax, na.rm = TRUE))
 
-estaciones <- fread("https://raw.githubusercontent.com/eliocamp/r-clima/master/datos/estaciones_smn.csv") 
+estaciones <- readr::read_csv("https://raw.githubusercontent.com/eliocamp/r-clima/master/datos/estaciones_smn.csv") 
 
 observaciones <- left_join(observaciones, estaciones, by = c("station" = "nombre")) %>% 
   filter(provincia != "ANTARTIDA")
@@ -251,7 +250,13 @@ class: inverse
 * `r emo::ji("point_right")` [Repositorio de datos climáticos](https://cds.climate.copernicus.eu/cdsapp#!/home)
 
 ---
+
+background-image: url(https://github.com/paocorrales/datos-espaciales-ohw22/blob/main/slides/img/background.png?raw=true)
+background-size: 120%
 class: inverse, center, middle
-background-image: url(slides/img/background)
-background-size: cover
+
 # ¡Gracias!
+
+
+
+@paobcorrales | `r emo::ji("globe_with_meridians")` paocorrales.github.io
