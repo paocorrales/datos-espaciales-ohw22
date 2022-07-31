@@ -235,8 +235,10 @@ class: inverse
 
 1. `r emo::ji("computer")` Entrá a este proyecto de RStudio Cloud  
   `r emo::ji("exclamation")` (si nunca usaste RStudio Cloud, necesitas una cuenta)  
-  `r emo::ji("clock")` Puede demorar un par de minutos en abrir
-4.`r emo::ji("save")` Hacé click en "Save a permanent copy" (arriba a la derecha)
+  `r emo::ji("clock")` Puede demorar un par de minutos en abrir 
+  
+2. `r emo::ji("save")` Hacé click en "Save a permanent copy" (arriba a la derecha)
+
 5. `r emo::ji("white_check_mark")` Listo!
 
 ---
@@ -245,8 +247,11 @@ class: inverse
 
 * `r emo::ji("point_right")` Tutorial: [Datos espaciales a lo tidy](https://eliocamp.github.io/espaciales-tidy-tutorial/)  
   * [Descarga y lectura de datos](https://eliocamp.github.io/espaciales-tidy-tutorial/useR2021/02_lectura.html) (versión anterior del tutorial)
+
 * `r emo::ji("point_right")` Tutorial: [R para clima](https://eliocamp.github.io/r-clima)
+
 * `r emo::ji("point_right")` [Documentación de metR](https://eliocamp.github.io/metR/index.html)
+
 * `r emo::ji("point_right")` [Repositorio de datos climáticos](https://cds.climate.copernicus.eu/cdsapp#!/home)
 
 ---
