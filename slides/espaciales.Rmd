@@ -233,7 +233,7 @@ class: inverse
 
 ## Manos a la obra!
 
-1. `r emo::ji("computer")` Entrá a este proyecto de RStudio Cloud  
+1. `r emo::ji("computer")` Entrá a este proyecto de RStudio Cloud: [rstudio.cloud/content/4312370](https://rstudio.cloud/content/4312370)  
   `r emo::ji("exclamation")` (si nunca usaste RStudio Cloud, necesitas una cuenta)  
   `r emo::ji("clock")` Puede demorar un par de minutos en abrir 
   
